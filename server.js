@@ -1,15 +1,15 @@
 const express = require('express');
 const session = require('express-session');
-const routes = require('./routes');
+const routes = require('./controllers');
 
-const sequelize = require('../UTSA-VIRT-FSF-PT-05-2023-U-LOLC/14-MVC/01-Activities/28-Stu_Mini-Project/Main/config/connection');
+const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-  secret: 'Super secret secret',
+  secret: '',
   cookie: {},
   resave: false,
   saveUninitialized: true,
